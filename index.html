@@ -17,237 +17,52 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
+    body { font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
     a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, 92%); margin: 0 auto; }
 
-    .container {
-      width: min(1120px, 92%);
-      margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(11,11,13,.9);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-
-    .logo {
-      font-size: 1.15rem;
-      font-weight: 800;
-      letter-spacing: .5px;
-    }
-
+    header { position: sticky; top: 0; z-index: 100; background: rgba(11,11,13,.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    .logo { font-size: 1.15rem; font-weight: 800; letter-spacing: .5px; }
     .logo span { color: var(--muted); }
-
-    .nav-links {
-      display: flex;
-      gap: 26px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: .95rem;
-      transition: color .2s;
-    }
-
+    .nav-links { display: flex; gap: 26px; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: .95rem; transition: color .2s; }
     .nav-links a:hover { color: var(--text); }
 
-    .hero {
-      min-height: 78vh;
-      display: flex;
-      align-items: center;
-      padding: 90px 0;
-      border-bottom: 1px solid var(--line);
-    }
+    .hero { min-height: 78vh; display: flex; align-items: center; padding: 90px 0; border-bottom: 1px solid var(--line); }
+    .eyebrow { color: var(--muted); text-transform: uppercase; letter-spacing: 3px; font-size: .78rem; margin-bottom: 18px; }
+    h1 { max-width: 900px; font-size: clamp(3.1rem, 8vw, 7rem); line-height: .95; letter-spacing: -4px; margin-bottom: 28px; }
+    .hero p { max-width: 650px; color: var(--muted); font-size: 1.2rem; margin-bottom: 34px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button { display: inline-block; padding: 13px 20px; border: 1px solid var(--accent); border-radius: 6px; font-weight: 700; transition: .2s; }
+    .button.primary { background: var(--accent); color: #0b0b0d; }
+    .button:hover { transform: translateY(-2px); opacity: .85; }
 
-    .eyebrow {
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: .78rem;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      max-width: 900px;
-      font-size: clamp(3.1rem, 8vw, 7rem);
-      line-height: .95;
-      letter-spacing: -4px;
-      margin-bottom: 28px;
-    }
-
-    .hero p {
-      max-width: 650px;
-      color: var(--muted);
-      font-size: 1.2rem;
-      margin-bottom: 34px;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 13px 20px;
-      border: 1px solid var(--accent);
-      border-radius: 6px;
-      font-weight: 700;
-      transition: .2s;
-    }
-
-    .button.primary {
-      background: var(--accent);
-      color: #0b0b0d;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      opacity: .85;
-    }
-
-    section {
-      padding: 90px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 12px;
-    }
-
-    .section-intro {
-      color: var(--muted);
-      max-width: 680px;
-      margin-bottom: 38px;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .project {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform .2s, border-color .2s;
-    }
-
-    .project:hover {
-      transform: translateY(-4px);
-      border-color: #55555f;
-    }
-
-    .project-image {
-      aspect-ratio: 16 / 9;
-      background:
-        linear-gradient(135deg, #27272e, #101014);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #777780;
-      font-size: .85rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
+    section { padding: 90px 0; border-bottom: 1px solid var(--line); }
+    .section-title { font-size: 2.2rem; margin-bottom: 12px; }
+    .section-intro { color: var(--muted); max-width: 680px; margin-bottom: 38px; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .project { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; transition: transform .2s, border-color .2s; }
+    .project:hover { transform: translateY(-4px); border-color: #55555f; }
+    .project-image { aspect-ratio: 16 / 9; background: linear-gradient(135deg, #27272e, #101014); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .project-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .project-image.tall img { object-position: center 38%; }
     .project-info { padding: 22px; }
+    .project-info h3 { margin-bottom: 7px; font-size: 1.3rem; }
+    .project-info p { color: var(--muted); font-size: .95rem; margin-bottom: 14px; }
+    .tag { display: inline-block; border: 1px solid var(--line); color: var(--muted); padding: 4px 9px; border-radius: 100px; font-size: .75rem; margin-right: 5px; }
 
-    .project-info h3 {
-      margin-bottom: 7px;
-      font-size: 1.3rem;
-    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: start; }
+    .about-text p { color: var(--muted); margin-bottom: 18px; }
+    .skills { display: grid; gap: 12px; }
+    .skill { padding: 17px; background: var(--surface); border: 1px solid var(--line); border-radius: 7px; }
+    .resume-box { margin-top: 28px; }
 
-    .project-info p {
-      color: var(--muted);
-      font-size: .95rem;
-      margin-bottom: 14px;
-    }
-
-    .tag {
-      display: inline-block;
-      border: 1px solid var(--line);
-      color: var(--muted);
-      padding: 4px 9px;
-      border-radius: 100px;
-      font-size: .75rem;
-      margin-right: 5px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-      align-items: start;
-    }
-
-    .about-text p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .skills {
-      display: grid;
-      gap: 12px;
-    }
-
-    .skill {
-      padding: 17px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 7px;
-    }
-
-    .contact-box {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 38px;
-      max-width: 800px;
-    }
-
-    .contact-box p {
-      color: var(--muted);
-      margin: 12px 0 25px;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    footer {
-      padding: 30px 0;
-      color: var(--muted);
-      font-size: .85rem;
-    }
+    .contact-box { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 38px; max-width: 800px; }
+    .contact-box p { color: var(--muted); margin: 12px 0 25px; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 12px; }
+    footer { padding: 30px 0; color: var(--muted); font-size: .85rem; }
 
     @media (max-width: 700px) {
       .nav-links { gap: 12px; }
@@ -260,7 +75,6 @@
   </style>
 </head>
 <body>
-
 <header>
   <div class="container">
     <nav>
@@ -279,12 +93,10 @@
     <div class="container">
       <div class="eyebrow">Media Production Portfolio</div>
       <h1>Creating stories through media.</h1>
-      <p>
-        I'm William Spies, a media production major building a portfolio in
-        video, photography, editing, and visual storytelling.
-      </p>
+      <p>I'm William Spies, a media production major building a portfolio in video, photography, editing, and visual storytelling.</p>
       <div class="buttons">
         <a class="button primary" href="#work">View My Work</a>
+        <a class="button" href="William_Spies_Resume.pdf" target="_blank">View Resume</a>
         <a class="button" href="#contact">Get In Touch</a>
       </div>
     </div>
@@ -293,39 +105,51 @@
   <section id="work">
     <div class="container">
       <h2 class="section-title">Selected Work</h2>
-      <p class="section-intro">
-        A collection of projects showing my work, creative process, and experience.
-        Replace these sample cards with your actual projects, videos, photos, or links.
-      </p>
+      <p class="section-intro">A collection of projects showing my work, creative process, and experience.</p>
 
       <div class="portfolio-grid">
         <article class="project">
-          <div class="project-image">Project Image / Video</div>
+          <div class="project-image"><img src="the-big-baby.jpg" alt="The Big Baby class project"></div>
           <div class="project-info">
-            <h3>Video Production</h3>
-            <p>Add a short description of a film, commercial, short-form video, or other production here.</p>
-            <span class="tag">Video</span>
-            <span class="tag">Editing</span>
+            <h3>The Big Baby</h3>
+            <p>A class skit created as part of my media production coursework.</p>
+            <span class="tag">Video</span><span class="tag">Class Project</span>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-image"><img src="get-out.png" alt="Get Out photography project featuring a blurred EXIT sign"></div>
+          <div class="project-info">
+            <h3>Get Out</h3>
+            <p>A photography project using motion and light to create an abstract image.</p>
+            <span class="tag">Photography</span><span class="tag">Creative</span>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-image tall"><img src="tranquility-in-japan.jpg" alt="Golden temple and garden in Japan"></div>
+          <div class="project-info">
+            <h3>Tranquility in Japan</h3>
+            <p>A photography piece capturing the peaceful setting and scenery of Japan.</p>
+            <span class="tag">Photography</span><span class="tag">Travel</span>
           </div>
         </article>
 
         <article class="project">
           <div class="project-image">Project Image / Video</div>
           <div class="project-info">
-            <h3>Photography</h3>
-            <p>Add a photography project and explain what you created, photographed, or learned.</p>
-            <span class="tag">Photography</span>
-            <span class="tag">Creative</span>
+            <h3>Chad's Big Missing Package</h3>
+            <p>A short class skit focused on storytelling, filming, and editing.</p>
+            <span class="tag">Video</span><span class="tag">Editing</span>
           </div>
         </article>
 
         <article class="project">
           <div class="project-image">Project Image / Video</div>
           <div class="project-info">
-            <h3>Short Film</h3>
-            <p>Showcase a short film, narrative project, documentary, or class production.</p>
-            <span class="tag">Film</span>
-            <span class="tag">Production</span>
+            <h3>Vice's</h3>
+            <p>A photography project exploring composition, subject, and visual style.</p>
+            <span class="tag">Photography</span><span class="tag">Creative</span>
           </div>
         </article>
 
@@ -333,9 +157,8 @@
           <div class="project-image">Project Image / Video</div>
           <div class="project-info">
             <h3>Editing Project</h3>
-            <p>Highlight an editing project and describe your role, software, and creative choices.</p>
-            <span class="tag">Post-Production</span>
-            <span class="tag">Editing</span>
+            <p>A space for future post-production work, showing editing and creative choices.</p>
+            <span class="tag">Post-Production</span><span class="tag">Editing</span>
           </div>
         </article>
       </div>
@@ -347,22 +170,18 @@
       <div class="about-grid">
         <div class="about-text">
           <h2 class="section-title">About Me</h2>
-          <p>
-            I'm William Spies, a media production student focused on developing
-            practical skills and creating strong visual work.
-          </p>
-          <p>
-            I'm interested in the full production process, from planning and
-            shooting to editing and final delivery. I'm always looking for
-            opportunities to learn, collaborate, and take on new projects.
-          </p>
+          <p>I'm William Spies, a Media Production student at Webster University. I'm interested in video production, photography, editing, and storytelling.</p>
+          <p>I enjoy working on projects from the planning and filming stages through editing and final delivery. I'm always looking to build my skills, try new ideas, and create work that feels original and engaging.</p>
+          <div class="resume-box"><a class="button primary" href="William_Spies_Resume.pdf" target="_blank">View My Resume</a></div>
         </div>
 
         <div class="skills">
           <div class="skill"><strong>Video Production</strong></div>
+          <div class="skill"><strong>Camera Operation &amp; Lighting</strong></div>
           <div class="skill"><strong>Video Editing</strong></div>
           <div class="skill"><strong>Photography</strong></div>
-          <div class="skill"><strong>Storytelling &amp; Creative Development</strong></div>
+          <div class="skill"><strong>Audio Production</strong></div>
+          <div class="skill"><strong>Storyboarding &amp; Creative Development</strong></div>
         </div>
       </div>
     </div>
@@ -372,14 +191,9 @@
     <div class="container">
       <div class="contact-box">
         <h2 class="section-title">Let's Work Together</h2>
-        <p>
-          Interested in working with me, discussing a project, or just seeing
-          more of my work? Reach out using one of the options below.
-        </p>
-
+        <p>Interested in working with me, discussing a project, or just seeing more of my work? Reach out using one of the options below.</p>
         <div class="contact-links">
-          <!-- Replace these with your real contact information -->
-          <a class="button primary" href="mailto:YOUR-EMAIL@example.com">Email Me</a>
+          <a class="button primary" href="mailto:williamspies802@gmail.com">Email Me</a>
           <a class="button" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="button" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
           <a class="button" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
@@ -389,11 +203,6 @@
   </section>
 </main>
 
-<footer>
-  <div class="container">
-    © 2026 William Spies. Media Production Portfolio.
-  </div>
-</footer>
-
+<footer><div class="container">© 2026 William Spies. Media Production Portfolio.</div></footer>
 </body>
 </html>
